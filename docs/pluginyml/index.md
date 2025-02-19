@@ -20,7 +20,7 @@ the [setup instructions](#setup):
 | Plugin URL (Bukkit only) | `url` project property    |
 | Plugin author            | `author` project property |
 
-# Setup
+## Setup
 
 For further setup instructions select your platform
 

@@ -1,11 +1,11 @@
 If your plugin is supposed to run on bukkit, spigot and/or paper servers this is the plugin to use. It will generate a plugin.yml
 
-# Kotlin
+## Kotlin
 
 ```kotlin
 plugins {
     java // or `kotlin("jvm") version "..."`
-    id("de.eldoria.plugin-yml.bukkit") version "{{ VC_LIBRARY_BUKKITYML_VERSION }}"
+    id("de.eldoria.plugin-yml.bukkit") version "{{ VC_PLUGIN_BUKKITYML_VERSION }}"
 }
 
 dependencies {
@@ -68,11 +68,11 @@ bukkit {
 }
 ```
 
-# Groovy
+## Groovy
 
 ```groovy
 plugins {
-    id 'de.eldoria.plugin-yml.bukkit' version '{{ VC_LIBRARY_BUKKITYML_VERSION }}'
+    id 'de.eldoria.plugin-yml.bukkit' version '{{ VC_PLUGIN_BUKKITYML_VERSION }}'
 }
 
 dependencies {

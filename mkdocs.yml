@@ -17,7 +17,7 @@ nav:
       - 'Configuration Creation': ocular/configuration_creation.md
       - 'Customization': ocular/customise.md
       - Examples:
-          - 'Jackson Bukkit': ocular/jackson_bukkit.md
+          - 'Jackson Bukkit': ocular/examples/jackson_bukkit.md
   - 'Plugin YML':
       - pluginyml/index.md
       - 'Bukkit / Spigot / Paper': pluginyml/bukkit.md
@@ -96,10 +96,7 @@ extra:
       link: https://www.spigotmc.org/resources/authors/585216/
     - name: Github
       icon: fontawesome/brands/github
-      link: https://github.com/rainbowdashlabs
+      link: https://github.com/eldoriarpg
     - name: Discord
       icon: fontawesome/brands/discord
-      link: https://discord.chojo.dev
-    - name: Blog RSS
-      icon: fontawesome/solid/rss
-      link: https://chojo.dev/feed_rss_created.xml
+      link: https://discord.eldoria.de

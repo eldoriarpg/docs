@@ -1,11 +1,11 @@
 If your plugin is supposed to run on BungeeCord servers this is the plugin to use. It will generate a bungee.yml
 
-# Kotlin
+## Kotlin
 
 ```kotlin
 plugins {
     java // or `kotlin("jvm") version "..."`
-    id("de.eldoria.plugin-yml.bungee") version "{{ VC_LIBRARY_BUNGEEYML_VERSION }}"
+    id("de.eldoria.plugin-yml.bungee") version "{{ VC_PLUGIN_BUNGEEYML_VERSION }}"
 }
 
 dependencies {
@@ -32,10 +32,10 @@ bungee {
 ```
 
 
-# Groovy
+## Groovy
 ```groovy
 plugins {
-    id 'de.eldoria.plugin-yml.bungee' version '{{ VC_LIBRARY_BUNGEEYML_VERSION }}'
+    id 'de.eldoria.plugin-yml.bungee' version '{{ VC_PLUGIN_BUNGEEYML_VERSION }}'
 }
 
 dependencies {

@@ -53,3 +53,5 @@ def _load_templates():
 
 _load_templates()
 templates = {k: _process_templates(v) for k, v in templates.items()}
+
+print(templates)

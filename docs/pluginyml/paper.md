@@ -3,7 +3,7 @@ Please consult the paper [plugin wiki](https://docs.papermc.io/paper/dev/getting
 
 To load your dependencies with paper, additional steps are required. Please have a look at the [plugin library json page](Plugin-Libraries-JSON)
 
-# Kotlin
+## Kotlin
 
 ```kotlin
 import net.minecrell.pluginyml.bukkit.BukkitPluginDescription
@@ -11,7 +11,7 @@ import net.minecrell.pluginyml.paper.PaperPluginDescription
 
 plugins {
     java // or `kotlin("jvm") version "..."`
-    id("de.eldoria.plugin-yml.paper") version "{{ VC_LIBRARY_PAPERYML_VERSION }}"
+    id("de.eldoria.plugin-yml.paper") version "{{ VC_PLUGIN_PAPERYML_VERSION }}"
 }
 
 repositories {
@@ -117,12 +117,12 @@ paper {
 }
 ```
 
-# Groovy
+## Groovy
 
 ```groovy
 plugins {
     id 'java'
-    id 'de.eldoria.plugin-yml.paper' version '{{ VC_LIBRARY_PAPERYML_VERSION }}'
+    id 'de.eldoria.plugin-yml.paper' version '{{ VC_PLUGIN_PAPERYML_VERSION }}'
 }
 
 repositories {

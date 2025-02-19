@@ -1,11 +1,11 @@
 If your plugin is supposed to run on nukkit servers this is the plugin to use. It will generate a nukkit.yml
 
-# Kotlin
+## Kotlin
 
 ```kotlin
 plugins {
     java // or `kotlin("jvm") version "..."`
-    id("de.eldoria.plugin-yml.nukkit") version "{{ VC_LIBRARY_NUKKITYML_VERSION }}"
+    id("de.eldoria.plugin-yml.nukkit") version "{{ VC_PLUGIN_NUKKITYML_VERSION }}"
 }
 
 nukkit {
@@ -52,11 +52,11 @@ nukkit {
 }
 ```
 
-# Groovy
+## Groovy
 
 ```groovy
 plugins {
-    id 'de.eldoria.plugin-yml.nukkit' version '{{ VC_LIBRARY_NUKKITYML_VERSION }}'
+    id 'de.eldoria.plugin-yml.nukkit' version '{{ VC_PLUGIN_NUKKITYML_VERSION }}'
 }
 
 nukkit {

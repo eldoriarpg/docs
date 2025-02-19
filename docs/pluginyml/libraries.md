@@ -21,7 +21,7 @@ paper {
 
 The JSON file is included in the plugin JAR and can be parsed at runtime to load the additional libraries.
 
-# Paper
+## Paper
 Define a custom `PluginLoader` inside your plugin code, for example:
 
 <details>
@@ -85,10 +85,10 @@ public class PluginLibrariesLoader implements PluginLoader {
 
 </details>
 
-# Nukkit
+## Nukkit
 (No example code available yet)
 
-# Bukkit/Bungee
+## Bukkit/Bungee
 `generateLibrariesJson` is also supported on Bukkit/Bungee (to generate `bukkit-libraries.json`/`bungee-libraries.json`).
 However, since these two allow specifying libraries directly inside the `plugin.yml` the option is generally not needed
 there.
