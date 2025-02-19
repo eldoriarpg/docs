@@ -1,0 +1,16 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "gradle": {
+    "enabled": true,
+    "automerge": true,
+    "ignoreTests": true
+  },
+  "gradle-wrapper": {
+    "enabled": true,
+    "automerge": true,
+    "ignoreTests": true
+  }
+}
