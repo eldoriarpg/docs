@@ -24,4 +24,4 @@ paperyml = { id = "de.eldoria.plugin-yml.paper", version = "0.7.1" }
 bungeeyml = { id = "de.eldoria.plugin-yml.bungee", version = "0.7.1" }
 nukkityml = { id = "de.eldoria.plugin-yml.nukkit", version = "0.7.1" }
 shadow = { id = "com.gradleup.shadow", version = "8.3.6" }
-userdev = { id = "io.papermc.paperweight.userdev", version = "1.7.2" }
+userdev = { id = "io.papermc.paperweight.userdev", version = "1.7.7" }
