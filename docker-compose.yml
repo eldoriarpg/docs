@@ -1,0 +1,20 @@
+services:
+  docs-dev:
+    volumes:
+      - "./.git:/docs/.git"
+      - "./docs/:/docs/docs"
+      - "./mkdocs.yml:/docs/mkdocs.yml"
+    build:
+      dockerfile: dev.Dockerfile
+    ports:
+      - "8888:80"
+    profiles:
+      - dev
+
+  docs:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "8888:80"
+    profiles:
+      - prod

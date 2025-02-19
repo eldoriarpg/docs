@@ -1,0 +1,105 @@
+site_name: Eldoria Docs
+site_url: https://docs.eldoria.de/
+site_description: Welcome to the Eldoria Docs. You can find information about our projects.
+copyright: Eldoria 2025
+docs_dir: docs
+site_dir: site
+plugins:
+  - git-revision-date-localized:
+      type: date
+      fallback_to_build_date: true
+      enable_creation_date: true
+
+nav:
+  - Home: index.md
+  - Ocular:
+      - ocular/index.md
+      - 'Configuration Creation': ocular/configuration_creation.md
+      - 'Customization': ocular/customise.md
+      - Examples:
+          - 'Jackson Bukkit': ocular/jackson_bukkit.md
+  - 'Plugin YML':
+      - pluginyml/index.md
+      - 'Bukkit / Spigot / Paper': pluginyml/bukkit.md
+      - 'Paper': pluginyml/paper.md
+      - 'Bungeecord': pluginyml/bungee.md
+      - 'Nukkit': pluginyml/nukkit.md
+      - 'Libraries': pluginyml/libraries.md
+
+theme:
+  logo: assets/images/logo.png
+  favicon: assets/favicon.png
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - navigation.tracking
+    # - navigation.expand
+    - navigation.tabs
+    - navigation.tabs.sticky
+    # - navigation.sections
+    # - navigation.indexes
+    - navigation.top
+    - content.code.annotate
+    - navigation.indexes
+    - toc.follow
+    - content.code.copy
+  language: en
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: pink
+      accent: light blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: pink
+      accent: light blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+# Emoji search
+# https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/
+
+
+extra:
+  social:
+    - name: Mastodon@chaos.social
+      icon: fontawesome/brands/mastodon
+      link: https://chaos.social/@chojo
+    - name: Patreon
+      icon: fontawesome/brands/patreon
+      link: https://www.patreon.com/eldoriaplugins
+    - name: Spigot
+      icon: material/minecraft
+      link: https://www.spigotmc.org/resources/authors/585216/
+    - name: Github
+      icon: fontawesome/brands/github
+      link: https://github.com/rainbowdashlabs
+    - name: Discord
+      icon: fontawesome/brands/discord
+      link: https://discord.chojo.dev
+    - name: Blog RSS
+      icon: fontawesome/solid/rss
+      link: https://chojo.dev/feed_rss_created.xml
