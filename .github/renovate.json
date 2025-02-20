@@ -6,7 +6,12 @@
   "gradle": {
     "enabled": true,
     "automerge": true,
-    "ignoreTests": true
+    "ignoreTests": true,
+    "registryUrls": [
+      "https://papermc.io/repo/repository/maven-public/",
+      "https://repo.maven.apache.org/maven2/",
+      "https://eldonexus.de/repository/maven-releases/"
+    ]
   },
   "gradle-wrapper": {
     "enabled": true,
