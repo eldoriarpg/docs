@@ -1,0 +1,17 @@
+name: Verify
+
+on:
+  push:
+    branches:
+      - *
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Build Image
+        run: docker build . -f Dockerfile

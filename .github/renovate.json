@@ -12,5 +12,13 @@
     "enabled": true,
     "automerge": true,
     "ignoreTests": true
+  },
+  "pipenv": {
+    "enabled": true,
+    "automerge": true
+  },
+  "dockerfile": {
+    "enabled": true,
+    "automerge": true
   }
 }
