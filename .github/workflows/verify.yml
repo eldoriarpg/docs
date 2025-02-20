@@ -3,7 +3,6 @@ name: Verify
 on:
   push:
     branches:
-      - *
 
 jobs:
   docker-build:
