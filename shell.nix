@@ -6,6 +6,6 @@ gradle= pkgs.gradle.override { java = jdk; };
 in
 pkgs.mkShell
 {
-  packages = with pkgs; [python311Full python311Packages.setuptools jdk gradle];
+  packages = with pkgs; [python313Full python313Packages.setuptools jdk gradle];
 }
 
