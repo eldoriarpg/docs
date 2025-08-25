@@ -25,6 +25,29 @@ nav:
       - 'Bungeecord': pluginyml/bungee.md
       - 'Nukkit': pluginyml/nukkit.md
       - 'Libraries': pluginyml/libraries.md
+  - 'Schematic Brush Reborn & Add-ons':
+      - schematicbrushreborn/index.md
+      - 'Schematic Brush Reborn':
+          - schematicbrushreborn/core/index.md
+          - 'Getting Started': schematicbrushreborn/core/getting_started.md
+          - 'Configuration': schematicbrushreborn/core/configuration.md
+          - 'Commands & Permissions': schematicbrushreborn/core/commands.md
+          - 'Presets': schematicbrushreborn/core/presets.md
+          - 'Api': schematicbrushreborn/core/api.md
+      - 'Schematic Brush Database':
+          - schematicbrushreborn/database/index.md
+      - 'Schematic Tools':
+          - schematicbrushreborn/tools/index.md
+      - 'Survival Schematic Brush':
+          - schematicbrushreborn/survival/index.md
+  - 'Companies':
+      - companies/index.md
+      - 'Commands': companies/commands.md
+      - 'Configuration': companies/configuration.md
+      - 'Managing your Company': companies/managing_your_company.md
+      - 'Managing your Orders': companies/managing_your_orders.md
+      - 'Multiserver Setup': companies/multiserver_setup.md
+      - 'Placeholder': companies/placeholder.md
 
 theme:
   logo: assets/images/logo.png
