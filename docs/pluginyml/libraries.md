@@ -21,6 +21,10 @@ paper {
 
 The JSON file is included in the plugin JAR and can be parsed at runtime to load the additional libraries.
 
+!!! warning
+    From 1.21 it is no longer possible to load libraries from maven central directly.
+    The easiest way to get around this is by declaring a maven central proxy in your repositories instead of the maven central repository. See [here](#proxy-override) for other options
+
 ## Paper
 Define a custom `PluginLoader` inside your plugin code, for example:
 
@@ -92,3 +96,25 @@ public class PluginLibrariesLoader implements PluginLoader {
 `generateLibrariesJson` is also supported on Bukkit/Bungee (to generate `bukkit-libraries.json`/`bungee-libraries.json`).
 However, since these two allow specifying libraries directly inside the `plugin.yml` the option is generally not needed
 there.
+
+## Proxy Override
+If you are using maven central directly, you can override the default maven central repository by adding the following to your `build.gradle.kts`
+
+```kts
+tasks {
+    generatePaperPluginDescription {
+        useDefaultCentralProxy()
+    }
+}
+```
+This will add the google proxy and our own proxy as a backup. Please ensure the order is preserved when loading and our repo is added second.
+
+You can also add own proxies by using the `addMavenCentralProxy` function.
+```kts
+tasks {
+    generatePaperPluginDescription {
+        addMavenCentralProxy("google", "https://maven-central.storage-download.googleapis.com/maven2")
+    }
+}
+```
+
