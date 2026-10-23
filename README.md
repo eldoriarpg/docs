@@ -65,42 +65,27 @@ folders; order pages with `sidebar_position` front matter and name folders with 
 Link within the project relatively (`./commands.md`) and to other spaces absolutely (`/companies`).
 Broken links and anchors fail the build.
 
-Add `.github/workflows/docs.yml`:
+Add `.github/workflows/docs.yml`. It hands everything to the shared workflow of this repository:
 
 ```yaml
 name: Docs
 
 on:
   push:
-    branches: [main]
     paths: ['docs/**']
   pull_request:
     paths: ['docs/**']
 
 jobs:
-  verify:
-    if: github.event_name == 'pull_request'
-    uses: eldoriarpg/docs/.github/workflows/verify-space.yml@main
-
-  publish:
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/create-github-app-token@v3
-        id: token
-        with:
-          client-id: ${{ vars.DOCS_APP_ID }}
-          private-key: ${{ secrets.DOCS_APP_PRIVATE_KEY }}
-          owner: eldoriarpg
-          repositories: docs
-      - name: Rebuild the docs
-        env:
-          GH_TOKEN: ${{ steps.token.outputs.token }}
-        run: gh api repos/eldoriarpg/docs/dispatches -f event_type=docs-changed -f "client_payload[repository]=${{ github.repository }}"
+  docs:
+    uses: eldoriarpg/docs/.github/workflows/space.yml@main
+    secrets: inherit
 ```
 
-The verify job builds this hub with the pull request's `docs/` folder in place of the published one,
-so the repository must already be listed in `spaces.ts`.
+On a pull request it builds this hub with the pull request's `docs/` folder in place of the published
+one, so broken links fail the pull request; the repository must already be listed in `spaces.ts`. On
+a push to the default branch it asks the hub to rebuild. A docs folder other than `docs/` is passed
+with `with: {docs-path: …}`.
 
 ## Rebuild trigger
 
