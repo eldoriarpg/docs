@@ -17,8 +17,6 @@ jobs:
         run: npm ci
       - name: Typecheck
         run: npm run typecheck
-      - name: Build the example hub
-        run: npm run example:build
       - name: Build the hub
         run: npm run build
 

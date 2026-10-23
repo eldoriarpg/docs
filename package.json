@@ -2,29 +2,23 @@
   "name": "eldoria-docs",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "start": "docs-hub start",
     "build": "docs-hub build",
     "serve": "docusaurus serve",
     "sync": "docs-hub sync",
-    "clear": "docusaurus clear && rm -rf .spaces .cache",
-    "typecheck": "tsc",
-    "example:start": "docs-hub start packages/docs-hub/example",
-    "example:build": "docs-hub build packages/docs-hub/example"
+    "clear": "docusaurus clear && rm -rf .spaces .javadoc .cache",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.2",
     "@mdx-js/react": "^3.1.1",
-    "docs-hub": "*",
+    "docs-hub": "github:rainbowdashlabs/docs-hub#v1.0.1",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.10.2",
-    "@docusaurus/tsconfig": "3.10.2",
     "@docusaurus/types": "3.10.2",
     "@types/node": "^24.0.0",
     "@types/react": "^19.3.0",
