@@ -63,4 +63,20 @@ export default [
     accent: {light: '#455a64', dark: '#90a4ae'},
     sources: [{repo: 'eldoriarpg/messageblocker'}],
   },
+  {
+    id: 'jackson-bukkit',
+    title: 'Jackson Bukkit',
+    description: 'Jackson modules that read and write Bukkit and Paper types such as items, locations and colours.',
+    group: 'tools',
+    accent: {light: '#1565c0', dark: '#64b5f6'},
+    sources: [{repo: 'eldoriarpg/jackson-bukkit'}],
+  },
+  {
+    id: 'plugin-yml',
+    title: 'Plugin YML',
+    description: 'Gradle plugins that generate plugin.yml, paper-plugin.yml, bungee.yml and nukkit.yml from your build.',
+    group: 'tools',
+    accent: {light: '#ef6c00', dark: '#ffb74d'},
+    sources: [{repo: 'eldoriarpg/plugin-yml'}],
+  },
 ] satisfies Space[]
