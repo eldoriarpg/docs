@@ -12,6 +12,7 @@ export default [
       {repo: 'eldoriarpg/schematic-brush-database', mount: 'database', label: 'Schematic Brush Database'},
       {repo: 'eldoriarpg/schematic-tools', mount: 'tools', label: 'Schematic Tools'},
       {repo: 'eldoriarpg/survivalschematicbrush', mount: 'survival', label: 'Survival Schematic Brush'},
+      {repo: 'eldoriarpg/gridselector', ref: 'master', mount: 'grid-selector', label: 'Grid Selector'},
     ],
   },
   {
