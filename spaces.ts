@@ -23,6 +23,7 @@ export default [
     group: 'plugins',
     accent: {light: '#b26a00', dark: '#ffb74d'},
     sources: [{repo: 'eldoriarpg/companies'}],
+    javadoc: [{artifact: 'de.eldoria:companies-api'}],
   },
   {
     id: 'blood-night',
