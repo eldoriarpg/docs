@@ -1,28 +1,19 @@
-FROM python:3.13-bullseye AS base
+FROM node:24-alpine AS build
 
-RUN pip install pipenv
+RUN apk add --no-cache git
+WORKDIR /hub
 
-COPY Pipfile Pipfile.lock /
-
-# Hack to speedup pipenv buggy behaviour of being slow af in docker
-RUN pipenv requirements > requirements.txt
-RUN pip install -r requirements.txt
-RUN pipenv sync -v --site-packages
+COPY package.json package-lock.json ./
+COPY packages packages
+RUN npm ci
 
 COPY . .
-
-RUN find docs/ -type f -print0 | xargs -0 sed -i 's/★/:material-star:/g'
-RUN find docs/ -type f -print0 | xargs -0 sed -i 's/⯪/:material-star-half-full:/g'
-RUN find docs/ -type f -print0 | xargs -0 sed -i 's/☆/:material-star-outline:/g'
-RUN find docs/ -type f -print0 | xargs -0 sed -i 's/```kts/```js/g'
-RUN find docs/ -type f -print0 | xargs -0 sed -i 's/```kt/```js/g'
-RUN grep "distributionUrl" gradle/wrapper/gradle-wrapper.properties | grep -oP 'gradle-\K.*(?=-bin.zip)' > templates/gradle.md
-RUN pipenv run python tools/build.py
-
-RUN pipenv run mkdocs build -f mkdocs.yml
+RUN npm run build
 
 FROM nginx:alpine
 
-COPY --from=base /site /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /hub/build /usr/share/nginx/html
+RUN mv /usr/share/nginx/html/nginx-redirects.conf /etc/nginx/redirects.conf
 
 EXPOSE 80

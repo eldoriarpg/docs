@@ -3,27 +3,14 @@
   "extends": [
     "config:recommended"
   ],
-  "gradle": {
-    "enabled": true,
-    "automerge": true,
-    "ignoreTests": true,
-    "registryUrls": [
-      "https://papermc.io/repo/repository/maven-public/",
-      "https://repo.maven.apache.org/maven2/",
-      "https://eldonexus.de/repository/maven-releases/"
-    ]
-  },
-  "gradle-wrapper": {
-    "enabled": true,
-    "automerge": true,
-    "ignoreTests": true
-  },
-  "pipenv": {
-    "enabled": true,
+  "npm": {
     "automerge": true
   },
   "dockerfile": {
     "enabled": true,
+    "automerge": true
+  },
+  "github-actions": {
     "automerge": true
   }
 }
