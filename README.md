@@ -89,7 +89,7 @@ jobs:
       - uses: actions/create-github-app-token@v3
         id: token
         with:
-          client-id: ${{ vars.DOCS_APP_CLIENT_ID }}
+          client-id: ${{ vars.DOCS_APP_ID }}
           private-key: ${{ secrets.DOCS_APP_PRIVATE_KEY }}
           owner: eldoriarpg
           repositories: docs
@@ -111,7 +111,7 @@ Projects ask for a rebuild through an org-owned GitHub App. It is created once b
 3. Repository permissions: **Contents: Read and write**. Nothing else.
 4. Where can this app be installed: Only on this account.
 5. Create it, generate a private key, then install it on the organisation for **only** `eldoriarpg/docs`.
-6. Organization settings → Secrets and variables → Actions: variable `DOCS_APP_CLIENT_ID` with the App's Client ID,
+6. Organization settings → Secrets and variables → Actions: variable `DOCS_APP_ID` with the App ID (the Client ID works too),
    secret `DOCS_APP_PRIVATE_KEY` with the key file's content. Give both access to the project
    repositories.
 
