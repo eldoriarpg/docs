@@ -45,6 +45,19 @@ Add an entry to `spaces.ts`:
 but one gets a `mount` folder name and a `label`, and appears as its own sidebar category after the
 root source's pages. Documentation hosted elsewhere gets an `href` instead of `sources`.
 
+## Redirect old addresses
+
+`redirects` in `site.ts` maps an old path to a route of this hub or to a full URL:
+
+```ts
+redirects: {
+  '/companies/commands': '/companies/reference/commands',
+},
+```
+
+Each old path answers with and without a trailing slash. The build fails when a target route does not
+exist, so a moved page cannot leave a redirect pointing nowhere.
+
 ## Set up a project repository
 
 Its `docs/` folder needs an `index.md`, which becomes the space's front page. The sidebar follows the

@@ -29,6 +29,9 @@ export interface Group {
 
 /**
  * Everything that makes one hub different from another: its name, address, look and links.
+ *
+ * `redirects` maps old paths, for example those of a previous site, to a route of this hub or to an
+ * absolute URL. The build fails when a route target does not exist.
  */
 export interface Site {
   title: string
@@ -42,6 +45,7 @@ export interface Site {
   navbarLinks?: Link[]
   footer?: FooterColumn[]
   copyright?: string
+  redirects?: Record<string, string>
 }
 
 /**

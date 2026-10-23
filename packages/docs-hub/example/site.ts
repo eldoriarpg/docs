@@ -13,4 +13,8 @@ export default {
   navbarLinks: [{label: 'Source', href: 'https://example.invalid/source'}],
   footer: [{title: 'Help', items: [{label: 'Issues', href: 'https://example.invalid/issues'}]}],
   copyright: 'Example',
+  redirects: {
+    '/old/core/usage': '/core/usage/commands',
+    '/old/elsewhere': 'https://example.invalid/elsewhere',
+  },
 } satisfies Site

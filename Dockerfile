@@ -14,5 +14,6 @@ FROM nginx:alpine
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /hub/build /usr/share/nginx/html
+RUN mv /usr/share/nginx/html/nginx-redirects.conf /etc/nginx/redirects.conf
 
 EXPOSE 80
