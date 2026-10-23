@@ -8,6 +8,6 @@
     "noUncheckedIndexedAccess": true,
     "types": ["node", "@docusaurus/module-type-aliases", "@docusaurus/theme-classic"]
   },
-  "include": ["*.ts", "packages/*/src", "packages/*/example/*.ts"],
+  "include": ["*.ts"],
   "exclude": ["node_modules", "build", ".docusaurus", ".spaces", ".cache"]
 }

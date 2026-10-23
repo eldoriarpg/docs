@@ -7,8 +7,8 @@ colour, tied together by the navbar, the landing page and one look.
 
 - `site.ts` — name, address, colours and links of this hub
 - `spaces.ts` — the spaces and where their pages come from
-- `packages/docs-hub` — the hub itself, free of anything Eldoria-specific, with a placeholder
-  example hub in `packages/docs-hub/example`
+- the hub itself is the [docs-hub](https://github.com/rainbowdashlabs/docs-hub) package, pinned to a tag in
+  `package.json`; its README documents every option
 
 ## Develop
 
@@ -94,7 +94,7 @@ folders; order pages with `sidebar_position` front matter and name folders with 
 Link within the project relatively (`./commands.md`) and to other spaces absolutely (`/companies`).
 Broken links and anchors fail the build.
 
-Add `.github/workflows/docs.yml`. It hands everything to the shared workflow of this repository:
+Add `.github/workflows/docs.yml`. It hands everything to the shared workflow of the docs-hub package:
 
 ```yaml
 name: Docs
@@ -107,7 +107,9 @@ on:
 
 jobs:
   docs:
-    uses: eldoriarpg/docs/.github/workflows/space.yml@main
+    uses: rainbowdashlabs/docs-hub/.github/workflows/space.yml@v1
+    with:
+      hub-repository: eldoriarpg/docs
     secrets: inherit
 ```
 

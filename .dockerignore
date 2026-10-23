@@ -7,7 +7,3 @@ build
 .docusaurus
 .spaces
 .cache
-packages/*/example/build
-packages/*/example/.docusaurus
-packages/*/example/.spaces
-packages/*/example/.javadoc

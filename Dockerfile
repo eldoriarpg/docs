@@ -4,7 +4,6 @@ RUN apk add --no-cache git
 WORKDIR /hub
 
 COPY package.json package-lock.json ./
-COPY packages packages
 RUN npm ci
 
 COPY . .
