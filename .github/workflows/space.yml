@@ -1,4 +1,4 @@
-name: Verify space
+name: Docs space
 
 on:
   workflow_call:
@@ -15,9 +15,14 @@ on:
         description: Branch of the hub to build with.
         type: string
         default: main
+    secrets:
+      DOCS_APP_PRIVATE_KEY:
+        description: Private key of the GitHub App that may start a rebuild of the hub.
+        required: false
 
 jobs:
-  build:
+  verify:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Check out the hub
@@ -45,3 +50,30 @@ jobs:
           name=$(printf %s "${GITHUB_REPOSITORY#*/}" | tr '[:lower:]' '[:upper:]' | tr -c 'A-Z0-9' '_')
           export "HUB_SOURCE_${name}=${GITHUB_WORKSPACE}/source/${{ inputs.docs-path }}"
           npm run build
+
+  publish:
+    if: github.event_name == 'push' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Split the hub repository
+        id: hub
+        env:
+          HUB: ${{ inputs.hub-repository }}
+        run: |
+          echo "owner=${HUB%%/*}" >> "$GITHUB_OUTPUT"
+          echo "name=${HUB#*/}" >> "$GITHUB_OUTPUT"
+      - name: Create a token for the hub
+        id: token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.DOCS_APP_ID }}
+          private-key: ${{ secrets.DOCS_APP_PRIVATE_KEY }}
+          owner: ${{ steps.hub.outputs.owner }}
+          repositories: ${{ steps.hub.outputs.name }}
+      - name: Rebuild the hub
+        env:
+          GH_TOKEN: ${{ steps.token.outputs.token }}
+        run: >-
+          gh api repos/${{ inputs.hub-repository }}/dispatches
+          -f event_type=docs-changed
+          -f "client_payload[repository]=${{ github.repository }}"
