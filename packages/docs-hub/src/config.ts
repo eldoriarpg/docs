@@ -2,6 +2,8 @@ import type {Options as DocsOptions} from '@docusaurus/plugin-content-docs'
 import type {Config, LoadContext, PluginConfig} from '@docusaurus/types'
 import {createRequire} from 'node:module'
 import {themes as prismThemes} from 'prism-react-renderer'
+import {cardPathOf} from './cards.ts'
+import {lightOf} from './colours.ts'
 import hubPlugin from './plugin.ts'
 import {sidebarOf} from './sidebar.ts'
 import {JAVADOC_DIR, builtSpaces, isLocalSource, pathOf, refOf, spaceDirOf, validate} from './spaces.ts'
@@ -37,6 +39,8 @@ export function createHubConfig(site: Site, spaces: Space[]): Config {
     ],
     themeConfig: {
       colorMode: {respectPrefersColorScheme: true},
+      image: cardPathOf(site.baseUrl ?? '/'),
+      metadata: [{name: 'theme-color', content: lightOf(site.primary)}],
       navbar: {
         title: site.title,
         logo: site.logo,

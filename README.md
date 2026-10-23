@@ -66,6 +66,14 @@ Javadoc is not a docs route, so docs pages link to it with `pathname:///`:
 [Javadoc](pathname:///schematic-brush-reborn/javadoc/)
 ```
 
+## Link previews
+
+Every docs page gets a preview card, rendered during the build to `og/<page address>.png`: the page
+title and description, the space's name and accent, and the site's logo. Discord and other chat apps
+show it as a large image when a link is posted, with the space's colour as the embed colour. The
+landing page and pages without a space use a card of the site itself. A page can use its own image
+with `image:` in its front matter.
+
 ## Redirect old addresses
 
 `redirects` in `site.ts` maps an old path to a route of this hub or to a full URL:
