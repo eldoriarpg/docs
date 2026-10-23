@@ -21,3 +21,10 @@ jobs:
         run: npm run example:build
       - name: Build the hub
         run: npm run build
+
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build Image
+        run: docker build . -f Dockerfile
