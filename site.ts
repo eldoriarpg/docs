@@ -66,5 +66,8 @@ export default {
     '/ocular/configuration_creation': 'https://docs.chojo.dev/ocular/configuration-creation',
     '/ocular/customise': 'https://docs.chojo.dev/ocular/customise',
     '/ocular/examples/jackson_bukkit': '/jackson-bukkit',
+    '/jackson-bukkit/javadoc/core': 'https://docs.eldoria.de/jackson-bukkit/javadoc/',
+    '/jackson-bukkit/javadoc/bukkit': 'https://docs.eldoria.de/jackson-bukkit/javadoc/',
+    '/jackson-bukkit/javadoc/paper': 'https://docs.eldoria.de/jackson-bukkit/javadoc/',
   },
 } satisfies Site
