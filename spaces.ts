@@ -2,6 +2,19 @@ import type {Space} from 'docs-hub'
 
 export default [
   {
+    id: 'schematic-brush-reborn',
+    title: 'Schematic Brush Reborn',
+    description: 'Paint with schematics: brushes that place random, rotated and flipped schematics from your sets.',
+    group: 'plugins',
+    accent: {light: '#6a1b9a', dark: '#ce93d8'},
+    sources: [
+      {repo: 'eldoriarpg/SchematicBrushReborn', ref: 'master'},
+      {repo: 'eldoriarpg/schematic-brush-database', mount: 'database', label: 'Schematic Brush Database'},
+      {repo: 'eldoriarpg/schematic-tools', mount: 'tools', label: 'Schematic Tools'},
+      {repo: 'eldoriarpg/survivalschematicbrush', mount: 'survival', label: 'Survival Schematic Brush'},
+    ],
+  },
+  {
     id: 'companies',
     title: 'Companies',
     description: 'Players place orders for items, companies of players claim and deliver them.',
