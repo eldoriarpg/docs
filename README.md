@@ -101,16 +101,18 @@ name: Docs
 
 on:
   push:
-    paths: ['docs/**']
+    paths: ['docs/**', '.github/workflows/docs.yml']
   pull_request:
-    paths: ['docs/**']
+    paths: ['docs/**', '.github/workflows/docs.yml']
 
 jobs:
   docs:
     uses: rainbowdashlabs/docs-hub/.github/workflows/space.yml@v1
     with:
       hub-repository: eldoriarpg/docs
-    secrets: inherit
+      app-id: ${{ vars.DOCS_APP_ID }}
+    secrets:
+      DOCS_APP_PRIVATE_KEY: ${{ secrets.DOCS_APP_PRIVATE_KEY }}
 ```
 
 On a pull request it builds this hub with the pull request's `docs/` folder in place of the published
