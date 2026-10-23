@@ -13,7 +13,7 @@
   "dependencies": {
     "@docusaurus/core": "3.10.2",
     "@mdx-js/react": "^3.1.1",
-    "docs-hub": "github:rainbowdashlabs/docs-hub#v1.0.1",
+    "docs-hub": "github:rainbowdashlabs/docs-hub#v1.0.3",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
