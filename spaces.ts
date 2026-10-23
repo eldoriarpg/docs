@@ -74,11 +74,7 @@ export default [
     group: 'tools',
     accent: {light: '#1565c0', dark: '#64b5f6'},
     sources: [{repo: 'eldoriarpg/jackson-bukkit'}],
-    javadoc: [
-      {artifact: 'de.eldoria.jacksonbukkit:core', label: 'Javadoc: core'},
-      {artifact: 'de.eldoria.jacksonbukkit:bukkit', label: 'Javadoc: bukkit'},
-      {artifact: 'de.eldoria.jacksonbukkit:paper', label: 'Javadoc: paper'},
-    ],
+    javadoc: [{artifact: 'de.eldoria.jacksonbukkit:jackson-bukkit'}],
   },
   {
     id: 'plugin-yml',
