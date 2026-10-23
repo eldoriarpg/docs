@@ -62,6 +62,9 @@ export default {
     '/pluginyml/bungee': '/plugin-yml/bungee',
     '/pluginyml/nukkit': '/plugin-yml/nukkit',
     '/pluginyml/libraries': '/plugin-yml/libraries',
+    '/ocular': 'https://docs.chojo.dev/ocular',
+    '/ocular/configuration_creation': 'https://docs.chojo.dev/ocular/configuration-creation',
+    '/ocular/customise': 'https://docs.chojo.dev/ocular/customise',
     '/ocular/examples/jackson_bukkit': '/jackson-bukkit',
   },
 } satisfies Site
