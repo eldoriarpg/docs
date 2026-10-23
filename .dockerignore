@@ -1,0 +1,12 @@
+.git
+.concept
+.direnv
+.idea
+node_modules
+build
+.docusaurus
+.spaces
+.cache
+packages/*/example/build
+packages/*/example/.docusaurus
+packages/*/example/.spaces

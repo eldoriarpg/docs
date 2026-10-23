@@ -2,15 +2,22 @@ name: Verify
 
 on:
   push:
-    branches:
 
 jobs:
-  docker-build:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
+      - name: Set up Node
+        uses: actions/setup-node@v5
         with:
-          fetch-depth: 0
-      - name: Build Image
-        run: docker build . -f Dockerfile
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Build the example hub
+        run: npm run example:build
+      - name: Build the hub
+        run: npm run build

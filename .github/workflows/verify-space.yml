@@ -1,0 +1,47 @@
+name: Verify space
+
+on:
+  workflow_call:
+    inputs:
+      docs-path:
+        description: Folder of the calling repository that holds its docs.
+        type: string
+        default: docs
+      hub-repository:
+        description: Repository of the hub that lists the calling repository as a source.
+        type: string
+        default: eldoriarpg/docs
+      hub-ref:
+        description: Branch of the hub to build with.
+        type: string
+        default: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the hub
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ inputs.hub-repository }}
+          ref: ${{ inputs.hub-ref }}
+          path: hub
+      - name: Check out the docs
+        uses: actions/checkout@v7
+        with:
+          path: source
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version-file: hub/.nvmrc
+          cache: npm
+          cache-dependency-path: hub/package-lock.json
+      - name: Install
+        working-directory: hub
+        run: npm ci
+      - name: Build the hub with these docs
+        working-directory: hub
+        run: |
+          name=$(printf %s "${GITHUB_REPOSITORY#*/}" | tr '[:lower:]' '[:upper:]' | tr -c 'A-Z0-9' '_')
+          export "HUB_SOURCE_${name}=${GITHUB_WORKSPACE}/source/${{ inputs.docs-path }}"
+          npm run build
