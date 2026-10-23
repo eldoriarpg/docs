@@ -1,13 +1,20 @@
 {
-  "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "ignoreDeprecations": "6.0",
-    "allowImportingTsExtensions": true,
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "jsx": "preserve",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
     "noEmit": true,
     "strict": true,
     "noUncheckedIndexedAccess": true,
+    "allowImportingTsExtensions": true,
+    "paths": {"@site/*": ["./*"]},
     "types": ["node", "@docusaurus/module-type-aliases", "@docusaurus/theme-classic"]
   },
   "include": ["*.ts"],
-  "exclude": ["node_modules", "build", ".docusaurus", ".spaces", ".cache"]
+  "exclude": ["node_modules", "build", ".docusaurus", ".spaces", ".javadoc", ".cache"]
 }
