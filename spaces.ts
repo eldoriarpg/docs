@@ -84,4 +84,12 @@ export default [
     accent: {light: '#ef6c00', dark: '#ffb74d'},
     sources: [{repo: 'eldoriarpg/plugin-yml'}],
   },
+  {
+    id: 'eldo-util',
+    title: 'Eldo Util',
+    description: 'The base library of every Eldoria plugin: plugin base class, commands, messages, localization, configuration and update checks.',
+    group: 'tools',
+    accent: {light: '#3949ab', dark: '#9fa8da'},
+    sources: [{repo: 'eldoriarpg/eldo-util', ref: 'chore/library-setup'}],
+  },
 ] satisfies Space[]
