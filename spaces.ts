@@ -90,6 +90,6 @@ export default [
     description: 'The base library of every Eldoria plugin: plugin base class, commands, messages, localization, configuration and update checks.',
     group: 'tools',
     accent: {light: '#3949ab', dark: '#9fa8da'},
-    sources: [{repo: 'eldoriarpg/eldo-util', ref: 'chore/library-setup'}],
+    sources: [{repo: 'eldoriarpg/eldo-util'}],
   },
 ] satisfies Space[]
