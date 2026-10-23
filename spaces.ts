@@ -91,5 +91,6 @@ export default [
     group: 'tools',
     accent: {light: '#3949ab', dark: '#9fa8da'},
     sources: [{repo: 'eldoriarpg/eldo-util'}],
+    javadoc: [{artifact: 'de.eldoria.util:eldo-util'}],
   },
 ] satisfies Space[]
