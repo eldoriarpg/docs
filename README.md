@@ -45,6 +45,27 @@ Add an entry to `spaces.ts`:
 but one gets a `mount` folder name and a `label`, and appears as its own sidebar category after the
 root source's pages. Documentation hosted elsewhere gets an `href` instead of `sources`.
 
+## Javadoc
+
+A space can serve the Javadoc of its APIs:
+
+```ts
+javadoc: [{artifact: 'de.eldoria:schematicbrushreborn-api'}],
+```
+
+On every build the hub downloads the newest released `-javadoc.jar` (no `-SNAPSHOT`, `-DEV`, `-RC`, …)
+from `mavenRepositories` in `site.ts` and serves it at `/<space>/javadoc/`, or at
+`/<space>/javadoc/<artifact name>/` when a space lists several. Pin a version with `version`, name the
+link with `label`. The pages are restyled with the hub's colours and the space's accent, follow the
+light or dark mode chosen on the docs pages, and link back to the space. The space's sidebar header
+links to each Javadoc.
+
+Javadoc is not a docs route, so docs pages link to it with `pathname:///`:
+
+```md
+[Javadoc](pathname:///schematic-brush-reborn/javadoc/)
+```
+
 ## Redirect old addresses
 
 `redirects` in `site.ts` maps an old path to a route of this hub or to a full URL:

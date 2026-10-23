@@ -4,7 +4,7 @@ import {createRequire} from 'node:module'
 import {themes as prismThemes} from 'prism-react-renderer'
 import hubPlugin from './plugin.ts'
 import {sidebarOf} from './sidebar.ts'
-import {builtSpaces, isLocalSource, pathOf, refOf, spaceDirOf, validate} from './spaces.ts'
+import {JAVADOC_DIR, builtSpaces, isLocalSource, pathOf, refOf, spaceDirOf, validate} from './spaces.ts'
 import type {Site, Space} from './types.ts'
 
 const require = createRequire(import.meta.url)
@@ -22,6 +22,7 @@ export function createHubConfig(site: Site, spaces: Space[]): Config {
     url: site.url,
     baseUrl: site.baseUrl ?? '/',
     favicon: site.favicon,
+    staticDirectories: ['static', JAVADOC_DIR],
     trailingSlash: false,
     onBrokenLinks: 'throw',
     onBrokenAnchors: 'throw',

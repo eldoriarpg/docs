@@ -14,6 +14,7 @@ export default [
       {repo: 'eldoriarpg/survivalschematicbrush', mount: 'survival', label: 'Survival Schematic Brush'},
       {repo: 'eldoriarpg/gridselector', ref: 'master', mount: 'grid-selector', label: 'Grid Selector'},
     ],
+    javadoc: [{artifact: 'de.eldoria:schematicbrushreborn-api'}],
   },
   {
     id: 'companies',
@@ -54,6 +55,7 @@ export default [
     group: 'plugins',
     accent: {light: '#00838f', dark: '#4dd0e1'},
     sources: [{repo: 'eldoriarpg/schematic-sanitizer'}],
+    javadoc: [{artifact: 'de.eldoria.schematic-sanitizer:api'}],
   },
   {
     id: 'message-blocker',
@@ -62,6 +64,7 @@ export default [
     group: 'tools',
     accent: {light: '#455a64', dark: '#90a4ae'},
     sources: [{repo: 'eldoriarpg/messageblocker'}],
+    javadoc: [{artifact: 'de.eldoria:messageblocker'}],
   },
   {
     id: 'jackson-bukkit',
@@ -70,6 +73,11 @@ export default [
     group: 'tools',
     accent: {light: '#1565c0', dark: '#64b5f6'},
     sources: [{repo: 'eldoriarpg/jackson-bukkit'}],
+    javadoc: [
+      {artifact: 'de.eldoria.jacksonbukkit:core', label: 'Javadoc: core'},
+      {artifact: 'de.eldoria.jacksonbukkit:bukkit', label: 'Javadoc: bukkit'},
+      {artifact: 'de.eldoria.jacksonbukkit:paper', label: 'Javadoc: paper'},
+    ],
   },
   {
     id: 'plugin-yml',
