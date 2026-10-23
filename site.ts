@@ -27,6 +27,8 @@ export default {
       title: 'Plugins',
       items: [
         {label: 'GitHub', href: 'https://github.com/eldoriarpg'},
+        {label: 'Lyna', href: 'https://lyna.eldoria.de/'},
+        {label: 'Modrinth', href: 'https://modrinth.com/organization/eldoria'},
         {label: 'SpigotMC', href: 'https://www.spigotmc.org/resources/authors/585216/'},
       ],
     },
@@ -36,6 +38,7 @@ export default {
     },
   ],
   copyright: `Eldoria ${new Date().getFullYear()}`,
+  mavenRepositories: ['https://repo1.maven.org/maven2', 'https://eldonexus.de/repository/maven-public'],
   redirects: {
     '/schematicbrushreborn': '/schematic-brush-reborn',
     '/schematicbrushreborn/core': '/schematic-brush-reborn',

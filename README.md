@@ -45,6 +45,35 @@ Add an entry to `spaces.ts`:
 but one gets a `mount` folder name and a `label`, and appears as its own sidebar category after the
 root source's pages. Documentation hosted elsewhere gets an `href` instead of `sources`.
 
+## Javadoc
+
+A space can serve the Javadoc of its APIs:
+
+```ts
+javadoc: [{artifact: 'de.eldoria:schematicbrushreborn-api'}],
+```
+
+On every build the hub downloads the newest released `-javadoc.jar` (no `-SNAPSHOT`, `-DEV`, `-RC`, …)
+from `mavenRepositories` in `site.ts` and serves it at `/<space>/javadoc/`, or at
+`/<space>/javadoc/<artifact name>/` when a space lists several. Pin a version with `version`, name the
+link with `label`. The pages are restyled with the hub's colours and the space's accent, follow the
+light or dark mode chosen on the docs pages, and link back to the space. The space's sidebar header
+links to each Javadoc.
+
+Javadoc is not a docs route, so docs pages link to it with `pathname:///`:
+
+```md
+[Javadoc](pathname:///schematic-brush-reborn/javadoc/)
+```
+
+## Link previews
+
+Every docs page gets a preview card, rendered during the build to `og/<page address>.png`: the page
+title and description, the space's name and accent, and the site's logo. Discord and other chat apps
+show it as a large image when a link is posted, with the space's colour as the embed colour. The
+landing page and pages without a space use a card of the site itself. A page can use its own image
+with `image:` in its front matter.
+
 ## Redirect old addresses
 
 `redirects` in `site.ts` maps an old path to a route of this hub or to a full URL:
